@@ -39,5 +39,46 @@ code {
 
 .labels {
   max-width: 50%;
+  height: 25px;
   display: flex;
+}
+
+.list-label {
+  display: flex;
+  align-items: center;
+}
+
+.list-item {
+  list-style-type: none;
+  height: 20px;
+}
+.list-item__label {
+  display: flex;
+  align-items: center;
+}
+
+.list-item-radio__label {
+  white-space: nowrap;
+}
+.list-item-radio__button {
+}
+
+/* .dropdown {
+  height: 35px;
+  width: 140px;
+  padding: 5px;
+  margin: 10px;
+  margin-top: 15px;
+  border: 1px solid #c0c0c0;
+  border-radius: 2px;
+} */
+
+.dropdown-select {
+  height: 35px;
+  width: 140px;
+  padding: 5px;
+  margin: 10px;
+  margin-top: 15px;
+  border: 1px solid #c0c0c0;
+  border-radius: 2px;
 }

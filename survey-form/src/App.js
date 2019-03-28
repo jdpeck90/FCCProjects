@@ -7,6 +7,8 @@ import TextareaInput from './components/TextareaInput';
 import './App.css';
 import Label from './components/Label';
 import RadioInput from './components/RadioInput';
+import Button from './components/Button';
+import Title from './components/Title';
 const appProps = {
   dropdownProps: ['optionOne', 'optionsTwo', 'optionThree'],
   radioProps: ['Definitely', 'Maybe', 'Not Sure'],
@@ -30,7 +32,9 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
+        <Title>Survey Form</Title>
         <Container>
+          <Title>Let us know how we can improve freeCodeCamp</Title>
           <Row>
             <Label name='name'>Name</Label>
             <Input name='name' type='text' />
@@ -74,6 +78,7 @@ class App extends Component {
             <Label name='radio'>Any Comments or Suggestions?</Label>
             <TextareaInput />
           </Row>
+          <Button type='submit'>Submit</Button>
         </Container>
       </div>
     );
