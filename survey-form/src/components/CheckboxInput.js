@@ -1,6 +1,6 @@
 import React from 'react';
 
-function RadioInput(props) {
+function CheckboxInput(props) {
   return (
     <div className='input-checkbox'>
       <ul className='list'>
@@ -12,7 +12,7 @@ function RadioInput(props) {
                 <input
                   name={`${props.name}`}
                   value={i}
-                  type='checkbox'
+                  type='radio'
                   className='list-item-checkbox__button'
                 />
               </label>
@@ -24,4 +24,4 @@ function RadioInput(props) {
   );
 }
 
-export default RadioInput;
+export default CheckboxInput;

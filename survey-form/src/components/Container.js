@@ -1,7 +1,11 @@
 import React from 'react';
 
 function Container(props) {
-  return <div className='container'>{props.children} </div>;
+  return (
+    <form className='container' id='survey-form'>
+      {props.children}{' '}
+    </form>
+  );
 }
 
 export default Container;

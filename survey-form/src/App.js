@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Container from './components/Container';
 import Row from './components/Row';
+import Copy from './components/Copy';
 import Input from './components/Input';
 import Dropdown from './components/Dropdown';
 import TextareaInput from './components/TextareaInput';
@@ -9,8 +10,15 @@ import Label from './components/Label';
 import RadioInput from './components/RadioInput';
 import Button from './components/Button';
 import Title from './components/Title';
+import CheckboxInput from './components/CheckboxInput';
 const appProps = {
-  dropdownProps: ['optionOne', 'optionsTwo', 'optionThree'],
+  dropdownProps: [
+    'Student',
+    'Fulltimejob',
+    'Fulltimeleaner',
+    'Prefer not to say',
+    'other'
+  ],
   radioProps: ['Definitely', 'Maybe', 'Not Sure'],
   secondDropdownProps: ['Challenges', 'Projects', 'Community', 'OpenSource'],
   secondRadioProps: [
@@ -32,20 +40,44 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        <Title>Survey Form</Title>
+        <Title size='lg'>Survey Form</Title>
         <Container>
-          <Title>Let us know how we can improve freeCodeCamp</Title>
+          <Copy size='md'>Let us know how we can improve freeCodeCamp</Copy>
           <Row>
-            <Label name='name'>Name</Label>
-            <Input name='name' type='text' />
+            <Label name='name' id='name'>
+              Name
+            </Label>
+            <Input
+              name='name'
+              type='text'
+              id='name'
+              placeholder='Enter your name'
+            />
           </Row>
           <Row>
-            <Label name='email'>Email</Label>
-            <Input name='email' type='email' />
+            <Label name='email' id='email'>
+              Email
+            </Label>
+            <Input
+              name='email'
+              type='email'
+              id='email'
+              placeholder='Enter your email'
+            />
           </Row>
           <Row>
-            <Label name='age'>Age</Label>
-            <Input name='age' type='age' />
+            <Label name='age' id='number'>
+              Age
+            </Label>
+            <Input
+              name='age'
+              type='number'
+              id='number'
+              placeholder='Enter your Age'
+              pattern='\d*'
+              min={1}
+              max={100}
+            />
           </Row>
           <Row>
             <Label name='dropdown'>
@@ -57,7 +89,11 @@ class App extends Component {
             <Label name='radio'>
               * How likely is that you would recommend freeCodeCamp to a friend?
             </Label>
-            <RadioInput value={appProps.radioProps} type='radio' />
+            <RadioInput
+              name='recommend'
+              value={appProps.radioProps}
+              type='radio'
+            />
           </Row>
           <Row>
             <Label name='dropdown'>What do you like most in FCC:</Label>
@@ -65,14 +101,22 @@ class App extends Component {
           </Row>
           <Row>
             <Label name='radio'>What do you like most in FCC:</Label>
-            <RadioInput value={appProps.secondRadioProps} type='radio' />
+            <CheckboxInput
+              name='preferences'
+              value={appProps.secondRadioProps}
+              type='radio'
+            />
           </Row>
           <Row>
             <Label name='radio'>
               Things that should be improved in the future (Check all that
               apply):
             </Label>
-            <RadioInput value={appProps.secondRadioProps} type='radio' />
+            <RadioInput
+              name='improvements'
+              value={appProps.secondRadioProps}
+              type='radio'
+            />
           </Row>
           <Row>
             <Label name='radio'>Any Comments or Suggestions?</Label>

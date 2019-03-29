@@ -1,10 +1,11 @@
 import React from 'react';
 
 function Label(props) {
+  console.log('from label', props);
   return (
     <div className='labels'>
       <label
-        id={`label-${props.name}`}
+        id={`${props.id}-label`}
         value={`${props.name}`}
         name={`${props.name}`}
       >
